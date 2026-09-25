@@ -5,253 +5,237 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CV - Arya Fauzi</title>
     <style>
-        /* CSS RESET & GENERAL STYLES */
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background-color: #e9ecef;
             color: #333;
-            background-color: #f4f6f9;
-            padding: 30px 15px;
+            padding: 20px 10px;
         }
-        .container {
-            max-width: 800px;
+        .cv-container {
+            max-width: 850px;
             margin: 0 auto;
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            background: #fff;
+            display: flex;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
         }
 
-        /* HEADER SECTION */
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px solid #eef2f5;
-            padding-bottom: 25px;
+        /* SIDEBAR KIRI (GELAP) */
+        .sidebar {
+            width: 35%;
+            background-color: #2c3e50;
+            color: #ffffff;
+            padding: 30px 20px;
+        }
+        .profile-box {
+            text-align: center;
             margin-bottom: 25px;
-            gap: 20px;
-        }
-        .header-text h1 {
-            font-size: 2.2rem;
-            color: #1a252f;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
-        }
-        .header-text .subtitle {
-            font-size: 1.1rem;
-            color: #3498db;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-        .contact-info p {
-            font-size: 0.9rem;
-            color: #666;
-            margin-bottom: 3px;
-        }
-        .contact-info a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        .contact-info a:hover {
-            text-decoration: underline;
         }
         .profile-img {
-            width: 140px;
-            height: 175px;
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
             object-fit: cover;
-            border-radius: 8px;
-            border: 3px solid #1a252f;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-            flex-shrink: 0;
+            border: 3px solid #fff;
         }
-
-        /* SECTIONS GENERAL */
-        section {
-            margin-bottom: 25px;
-        }
-        h2 {
-            font-size: 1.2rem;
-            color: #1a252f;
-            border-left: 4px solid #3498db;
-            padding-left: 10px;
-            margin-bottom: 15px;
+        .sidebar h2 {
+            font-size: 1.1rem;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            margin-top: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+            padding-bottom: 5px;
         }
-        p.about-text {
-            color: #4a5568;
-            text-align: justify;
+        .contact-list, .sidebar-list {
+            list-style: none;
+            font-size: 0.85rem;
+            line-height: 1.6;
         }
-
-        /* ITEM LIST & JOBS */
-        .item {
-            margin-bottom: 18px;
+        .contact-list li {
+            margin-bottom: 10px;
+            word-break: break-all;
         }
-        .item-header {
+        .contact-list a {
+            color: #fff;
+            text-decoration: none;
+        }
+        .edu-item {
+            margin-bottom: 12px;
+            font-size: 0.85rem;
+        }
+        .edu-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 4px;
+            font-weight: bold;
         }
-        .item-title {
-            font-size: 1.05rem;
-            font-weight: 700;
+        .edu-date {
+            font-size: 0.75rem;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+        .edu-sub {
+            font-size: 0.8rem;
+            opacity: 0.85;
+        }
+        .sidebar-list li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 12px;
+        }
+        .sidebar-list li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+        }
+
+        /* KONTEN KANAN (PUTIH) */
+        .main-content {
+            width: 65%;
+            padding: 35px 30px;
+        }
+        .main-content h1 {
+            font-size: 2.8rem;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            font-weight: 800;
+        }
+        .section-title {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        .section-title::after {
+            content: "";
+            flex: 1;
+            margin-left: 10px;
+            height: 2px;
+            background-color: #cbd5e1;
+        }
+        .about-text {
+            font-size: 0.85rem;
+            line-height: 1.5;
+            color: #555;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+        .job-item {
+            margin-bottom: 15px;
+        }
+        .job-company {
+            font-weight: bold;
+            font-size: 0.95rem;
             color: #2c3e50;
         }
-        .item-date {
-            font-size: 0.85rem;
-            color: #7f8c8d;
+        .job-role {
             font-weight: 600;
+            font-size: 0.88rem;
+            color: #444;
+            margin-top: 5px;
         }
-        .item-sub {
-            font-size: 0.95rem;
-            color: #3498db;
-            font-weight: 600;
-            margin-bottom: 6px;
-        }
-        .item ul {
-            margin-left: 18px;
-            color: #4a5568;
-            font-size: 0.93rem;
-        }
-        .item ul li {
-            margin-bottom: 4px;
+        .job-desc {
+            font-size: 0.83rem;
+            color: #555;
+            line-height: 1.4;
+            margin-top: 2px;
         }
 
-        /* SKILLS GRID */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            list-style: none;
-            padding: 0;
-        }
-        .skills-grid li {
-            background: #f8fafc;
-            padding: 8px 12px;
-            border-radius: 6px;
-            border: 1px solid #e2e8f0;
-            font-size: 0.9rem;
-            color: #334155;
-            font-weight: 500;
-        }
-
-        /* RESPONSIVE DESIGN (MOBILE FRIENDLY) */
-        @media (max-width: 600px) {
-            .header {
-                flex-direction: column-reverse;
-                text-align: center;
-            }
-            .header-text h2 {
-                border-left: none;
-            }
-            .item-header {
+        /* RESPONSIVE UNTUK HP */
+        @media (max-width: 650px) {
+            .cv-container {
                 flex-direction: column;
             }
-            .profile-img {
-                width: 120px;
-                height: 150px;
+            .sidebar, .main-content {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
+    <div class="cv-container">
         
-        <!-- HEADER -->
-        <div class="header">
-            <div class="header-text">
-                <h1>ARYA FAUZI</h1>
-                <div class="subtitle">S1 Sistem Informasi</div>
-                <div class="contact-info">
-                    <p>📍 Jl. Jatibening Baru No. 56</p>
-                    <p>✉️ <a href="mailto:fauziarya666@gmail.com">fauziarya666@gmail.com</a></p>
-                    <p>📞 +6281315158905</p>
-                </div>
+        <!-- SIDEBAR KIRI (GELAP) -->
+        <div class="sidebar">
+            <div class="profile-box">
+                <img src="foto-profil.jpeg" alt="Arya Fauzi" class="profile-img">
             </div>
-            <!-- Foto profil di sebelah kanan dengan bingkai kotak rapi -->
-            <img src="foto-profil.jpeg" alt="Foto Profil Arya Fauzi" class="profile-img">
+
+            <h2>Contact</h2>
+            <ul class="contact-list">
+                <li>✉️ <a href="mailto:fauziarya666@gmail.com">fauziarya666@gmail.com</a></li>
+                <li>📞 +6281315158905</li>
+                <li>📍 Jl. Jatibening baru no 56</li>
+            </ul>
+
+            <h2>Education</h2>
+            <div class="edu-item">
+                <div class="edu-header">
+                    <span>Telkom University</span>
+                    <span class="edu-date">2025 – Sekarang</span>
+                </div>
+                <div class="edu-sub">S1 Sistem Informasi</div>
+            </div>
+            <div class="edu-item">
+                <div class="edu-header">
+                    <span>Smk Malaka</span>
+                    <span class="edu-date">2022 – 2025</span>
+                </div>
+                <div class="edu-sub">Desain Komunikasi Visual</div>
+            </div>
+
+            <h2>Skills</h2>
+            <ul class="sidebar-list">
+                <li>Komunikasi yang Efektif</li>
+                <li>Kerja Tim & Kepemimpinan</li>
+                <li>Pekerja Keras & Cekatan</li>
+                <li>Bekerja Cepat di Bawah Tekanan (Under Pressure)</li>
+                <li>Perhatian Terhadap Detail (Attention to Detail)</li>
+                <li>Interaction Design</li>
+                <li>Visual Design</li>
+                <li>Microsoft Office (Excel, PowerPoint) & Dasar IT</li>
+            </ul>
         </div>
 
-        <!-- ABOUT ME -->
-        <section>
-            <h2>About Me</h2>
+        <!-- KONTEN UTAMA KANAN (PUTIH) -->
+        <div class="main-content">
+            <h1>Arya Fauzi</h1>
+
+            <h2 class="section-title">About Me</h2>
             <p class="about-text">
                 Mahasiswa Sistem Informasi Telkom University yang bersemangat, analitis, cepat belajar, mampu bekerja dalam tim, dan berkomitmen. Mampu bekerja dalam tim maupun mandiri, serta memiliki semangat tinggi untuk belajar hal-hal baru di bidang teknologi. Memiliki minat besar pada kegiatan kampus, terutama yang berkaitan dengan acara utama, dan saya ingin berkontribusi lebih banyak pada komunitas kampus.
             </p>
-        </section>
 
-        <!-- EDUCATION -->
-        <section>
-            <h2>Education</h2>
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Telkom University</span>
-                    <span class="item-date">2025 - Sekarang</span>
-                </div>
-                <div class="item-sub">S1 Sistem Informasi</div>
-            </div>
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">SMK Malaka</span>
-                    <span class="item-date">2022 - 2025</span>
-                </div>
-                <div class="item-sub">Desain Komunikasi Visual (DKV)</div>
-            </div>
-        </section>
-
-        <!-- WORK EXPERIENCE -->
-        <section>
-            <h2>Work Experience</h2>
+            <h2 class="section-title">Work Experience</h2>
             
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">PT Inti Prima Karya</span>
-                    <span class="item-date">SEP 2024 - DES 2024</span>
-                </div>
-                <ul>
-                    <li><b>Quality Control (QC):</b> Memeriksa bahan cetakan secara menyeluruh untuk memastikan produk memenuhi standar kualitas perusahaan, memeriksa akurasi warna, cacat perataan, dan kekurangan kertas sebelum didistribusikan.</li>
-                    <li><b>Finishing:</b> Menangani proses pasca-produksi—termasuk memotong, melipat, menjilid, dan melaminasi—untuk memastikan produk cetak akhir rapi, bersih, dan siap dikirim.</li>
-                    <li><b>Machine Operator:</b> Membantu mengoperasikan dan memantau mesin cetak agar berjalan lancar, memastikan target produksi tercapai sambil tetap menjaga keselamatan dan standar operasional.</li>
-                    <li><b>Administrasi / Pendataan Karyawan:</b> Membantu mengoperasikan dan memantau mesin cetak agar berjalan lancar, memastikan target produksi tercapai serta terstruktur.</li>
-                </ul>
+            <div class="job-item">
+                <div class="job-company">PT Inti Prima Karya (SEP 2024 – DES 2024)</div>
+                
+                <div class="job-role">Quality Control (QC)</div>
+                <p class="job-desc">Memeriksa bahan cetakan secara menyeluruh untuk memastikan produk memenuhi standar kualitas perusahaan, memeriksa akurasi warna, cacat perataan, dan kekurangan kertas sebelum didistribusikan.</p>
+
+                <div class="job-role">Finishing</div>
+                <p class="job-desc">Menangani proses pasca-produksi—termasuk memotong, melipat, menjilid, dan melaminasi—untuk memastikan produk cetak akhir rapi, bersih, dan siap dikirim.</p>
+
+                <div class="job-role">Machine Operator</div>
+                <p class="job-desc">Membantu mengoperasikan dan memantau mesin cetak agar berjalan lancar, memastikan target produksi tercapai sambil tetap menjaga keselamatan dan standar operasional.</p>
+
+                <div class="job-role">Administrasi / Pendataan Karyawan</div>
+                <p class="job-desc">Membantu mengoperasikan dan memantau mesin cetak agar berjalan lancar, memastikan target produksi tercapai sambil tetap menjaga keselamatan dan standar operasional.</p>
             </div>
 
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Student League Committee</span>
-                    <span class="item-date">SEP 2026 - OKT 2026</span>
-                </div>
-                <div class="item-sub">Staff Operasional</div>
-                <ul>
-                    <li>Mengelola operasional dan logistik di lapangan/venue untuk memastikan kelancaran jalannya pertandingan atau perlombaan tingkat kampus.</li>
-                    <li>Berkoordinasi dengan sesama panitia, peserta, dan pihak terkait untuk mengatur jadwal pertandingan, penyiapan peralatan, serta kesiapan lokasi acara.</li>
-                    <li>Menangani kendala operasional yang terjadi di lapangan secara cepat dan efisien agar kegiatan berjalan kondusif serta terstruktur.</li>
-                </ul>
+            <div class="job-item">
+                <div class="job-company">Student League Committee (SEP 2026 – OKT 2026)</div>
+                <div class="job-role">Staff Operasional</div>
+                <p class="job-desc">Mengelola operasional dan logistik di lapangan/venue untuk memastikan kelancaran jalannya pertandingan atau perlombaan tingkat kampus. Berkoordinasi dengan sesama panitia, peserta, dan pihak terkait untuk mengatur jadwal pertandingan, penyiapan peralatan, serta kesiapan lokasi acara. Menangani kendala operasional yang terjadi di lapangan secara cepat dan efisien agar kegiatan berjalan kondusif serta terstruktur.</p>
             </div>
-        </section>
-
-        <!-- SKILLS -->
-        <section>
-            <h2>Skills & Abilities</h2>
-            <ul class="skills-grid">
-                <li>• Komunikasi yang Efektif</li>
-                <li>• Kerja Tim & Kepemimpinan</li>
-                <li>• Pekerja Keras & Cekatan</li>
-                <li>• Under Pressure Worker</li>
-                <li>• Attention to Detail</li>
-                <li>• Interaction Design</li>
-                <li>• Visual Design</li>
-                <li>• Microsoft Office & Dasar IT</li>
-            </ul>
-        </section>
+        </div>
 
     </div>
 
